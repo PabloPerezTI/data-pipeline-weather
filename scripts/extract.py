@@ -40,16 +40,16 @@ if __name__ == "__main__":
     start_date = f'{year}-01-01'
     end_date = f'{year}-12-31'
     
-    # ubicaciones = {
-    #     'Zurich, Switzerland': 'zurich_data.csv',
-    #     'Andalucia, Spain': 'andalucia_data.csv',
-    #     'Munich, Germany': 'munich_data.csv',
-    #     'Amsterdam, Netherlands': 'amsterdam_data.csv',
-    # }
+    locations = {
+        'Zurich, Switzerland': 'zurich_data.csv',
+        'Andalucia, Spain': 'andalucia_data.csv',
+        'Munich, Germany': 'munich_data.csv',
+        'Amsterdam, Netherlands': 'amsterdam_data.csv',
+    }
 
-    ubicaciones = {'Amsterdam, Netherlands': 'amsterdam_data.csv'}
+    #locations = {'Amsterdam, Netherlands': 'amsterdam_data.csv'}
 
-    for location in ubicaciones.keys():
+    for location in locations.keys():
         csv_data = extract_data_API(location, start_date, end_date)
         if csv_data:
             country = location.split(",")[1].strip()
