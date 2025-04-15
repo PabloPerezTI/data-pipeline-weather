@@ -36,7 +36,7 @@ def save_data(data, filename):
 if __name__ == "__main__":
 
     #this_month = datetime.now().strftime('%Y-%m')
-    year = 2021
+    year = 2024
     start_date = f'{year}-01-01'
     end_date = f'{year}-12-31'
     

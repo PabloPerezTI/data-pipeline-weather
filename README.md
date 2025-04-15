@@ -1,9 +1,8 @@
 # data-pipeline-weather
 
-Countrys:
+Countries:
 
 Switzerland
 Spain
-Netherlands,
-Munich.
-Singapore
+Netherlands
+Germany
