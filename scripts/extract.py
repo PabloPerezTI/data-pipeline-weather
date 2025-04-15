@@ -30,13 +30,22 @@ def extract_data_API(location, start_date, end_date):
 def save_data(data, filename):
     if data:
         df = pd.read_csv(StringIO(data), encoding='utf-8')
+        replacements = {
+            '.*Schweiz.*': 'Switzerland',
+            '.*Deutschland.*': 'Germany',
+            '.*Nederland.*': 'Netherlands',
+            '.*Espa.*': 'Spain'
+        }
+
+        df['name'] = df['name'].replace(replacements, regex=True)
+        df['year'] = df['datetime'].str.split('-').str[0]
         df.to_parquet(filename)
         print(f"Data saved in {filename}")
 
 if __name__ == "__main__":
 
     #this_month = datetime.now().strftime('%Y-%m')
-    year = 2024
+    year = 2019
     start_date = f'{year}-01-01'
     end_date = f'{year}-12-31'
     
